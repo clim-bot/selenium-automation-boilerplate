@@ -1,0 +1,32 @@
+# Java and Maven
+*.class
+*.log
+*.tmp
+*.lock
+*.war
+*.ear
+*.jar
+*.class
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Others
+*.env

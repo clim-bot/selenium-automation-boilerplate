@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Selenium Firefox Suite" parallel="false">
+    <test name="Firefox Tests">
+        <parameter name="browser" value="firefox" />
+        <classes>
+            <class name="tests.LoginTest" />
+            <class name="tests.DashboardTest" />
+        </classes>
+    </test>
+</suite>
