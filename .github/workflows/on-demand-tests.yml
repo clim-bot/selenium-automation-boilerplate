@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: [${{ github.event.inputs.browser }}] # Use the selected browser input
+        browser: [chrome, firefox] # Define all possible browser options here
 
     steps:
       - name: Checkout code
@@ -44,3 +44,4 @@ jobs:
 
       - name: Run Selenium Tests
         run: mvn test -DsuiteXmlFile=src/test/testng-${{ matrix.browser }}.xml
+        if: ${{ matrix.browser == github.event.inputs.browser || github.event.inputs.browser == '' }}
