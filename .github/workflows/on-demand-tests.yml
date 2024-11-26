@@ -36,3 +36,4 @@ jobs:
       - name: Run Selenium Tests
         run: mvn test -DsuiteXmlFile=src/test/testng-${{ matrix.browser }}.xml
 
+
