@@ -12,10 +12,6 @@ jobs:
   selenium-tests:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        browser: [chrome, firefox] # Define all possible browser options here
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -23,13 +19,8 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '17' # Adjust Java version if necessary
-
-      - name: Set up Maven
-        uses: actions/setup-java@v3
-        with:
           java-version: '17'
-          distribution: 'temurin'
+          distribution: 'temurin'  # Required input to specify the JDK distribution
 
       - name: Cache Maven dependencies
         uses: actions/cache@v3
@@ -44,4 +35,4 @@ jobs:
 
       - name: Run Selenium Tests
         run: mvn test -DsuiteXmlFile=src/test/testng-${{ matrix.browser }}.xml
-        if: ${{ matrix.browser == github.event.inputs.browser || github.event.inputs.browser == '' }}
+
